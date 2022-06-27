@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "SF UI Display-bold";
+  src: url("../fonts/sf-ui-display-bold-58646a511e3d9.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF UI Display-medium";
+  src: url("../fonts/sf-ui-display-medium-58646be638f96.otf") format("opentype");
+}
+@font-face {
+  font-family: "SF UI Display-light";
+  src: url("../fonts/sf-ui-display-light-58646b33e0551.otf") format("opentype");
+}
+/* html{
+  overflow: hidden;
+} */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "SF UI Display-light";
+}
+ul,
+ol {
+  list-style: none;
+}
+.main_wrapper {
+  width: 100%;
+  max-width: 1478px;
+  margin: 0 auto;
+}

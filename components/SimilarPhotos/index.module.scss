@@ -1,0 +1,28 @@
+.main_wrapper {
+  padding-top: 80px;
+  width: 100%;
+  max-width: 1482px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.similar_photos_title {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+.similar_photos_text {
+  font-family: "SF UI Display-bold";
+  font-size: 36px;
+  color: #000;
+  line-height: 43px;
+}
+.similar_photos_show_more {
+  font-family: "SF UI Display-light";
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: underline;
+  color: #828282;
+}

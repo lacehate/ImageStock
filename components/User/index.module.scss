@@ -1,0 +1,26 @@
+.user_info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.user_profile_img {
+  width: 54px;
+  height: 54px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  margin-right: 11px;
+}
+.user_name_email {
+  font-family: "SF UI Display";
+  color: #ffffff;
+  .user_full_name {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .user_email {
+    font-size: 18px;
+    line-height: 21.48px;
+  }
+}
