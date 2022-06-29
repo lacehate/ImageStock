@@ -5,8 +5,10 @@ import Logo from "../../assets/images/logo.svg";
 import Search from "../../assets/images/search.svg";
 import Favorite from "../../assets/images/favorite.svg";
 import History from "../../assets/images/history.svg";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
   return (
     <header className={styles.header}>
       <div className={styles.main_wrapper}>
@@ -18,17 +20,17 @@ const Header = () => {
             </div>
           </Link>
         </div>
-        {/*  УСЛОВНАЯ ОТРИСОВКА НЕ ЗАБЫТЬ */}
         <div className={styles.actions}>
-          <div className={styles.header_search}>
-            <Link href="/" className={styles.header_title}>
-              <div className={styles.header_actions_inner}>
-                <Image src={Search} width={31} height={31} alt="" />
-                <p className={styles.inner_text}>Поиск</p>
-              </div>
-            </Link>
-          </div>
-          {/*  УСЛОВНАЯ ОТРИСОВКА НЕ ЗАБЫТЬ */}
+          {router.pathname !== "/" && (
+            <div className={styles.header_search}>
+              <Link href="/" className={styles.header_title}>
+                <div className={styles.header_actions_inner}>
+                  <Image src={Search} width={31} height={31} alt="" />
+                  <p className={styles.inner_text}>Поиск</p>
+                </div>
+              </Link>
+            </div>
+          )}
           <div className={styles.header_fav}>
             <Link href="/favorites" className={styles.header_title}>
               <div className={styles.header_actions_inner}>
@@ -37,7 +39,6 @@ const Header = () => {
               </div>
             </Link>
           </div>
-
           <div className={styles.header_history}>
             <Link href="/history" className={styles.header_title}>
               <div className={styles.header_actions_inner}>
@@ -52,4 +53,4 @@ const Header = () => {
   );
 };
 
-export default Header
+export default Header;

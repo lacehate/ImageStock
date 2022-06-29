@@ -15,9 +15,7 @@ const MainContainer = ({ children, keywords }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
     </>
   );
 };

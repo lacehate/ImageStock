@@ -24,6 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  cursor: pointer;
   .inner_text {
     padding-left: 10px;
     font-size: 18px;
@@ -39,4 +40,22 @@
 .header_fav {
   margin-left: 40px;
   margin-right: 42px;
+}
+
+@media all and (max-width: 400px) {
+  .header {
+    padding: 0 22px;
+  }
+  .header_actions_inner {
+    .inner_text {
+      display: none;
+    }
+  }
+  .main_logo_text {
+    display: none;
+  }
+  .header_fav {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }

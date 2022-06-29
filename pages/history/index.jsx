@@ -1,11 +1,11 @@
-import React from 'react'
-import MainContainer from '../../components/MainContainer/MainContainer'
-import SearchHistoryPop from '../../components/SearchHistoryPop'
+import React from 'react';
+import MainContainer from '../../components/MainContainer/MainContainer';
+import Search from '../../components/Search';
 
 const index = () => {
   return (
     <MainContainer>
-      <SearchHistoryPop/>
+      <Search/>
     </MainContainer>
   )
 }

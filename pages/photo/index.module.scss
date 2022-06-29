@@ -27,6 +27,7 @@
 }
 .button_addFav_download {
   display: flex;
+  align-items: center;
 }
 .photo_section_user_buttons {
   display: flex;
@@ -34,6 +35,10 @@
 }
 .add_to_favorites {
   margin-right: 20px;
+  cursor: pointer;
+}
+.button_download {
+  cursor: pointer;
 }
 .choosen_photo {
   width: 100%;
@@ -46,7 +51,6 @@
   left: 0;
   right: 0;
   height: 100vh;
-  box-shadow: 0px 4px 100px #000000;
   filter: blur(8px);
 }
 .photo_similar_tags_text {
@@ -77,5 +81,117 @@
   border: none;
   &:not(:first-child) {
     margin-left: 20px;
+  }
+}
+.similar_photos_title {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  width: 100%;
+  max-width: 1478px;
+  margin: 80px auto 48px;
+}
+.similar_photos_text {
+  font-family: "SF UI Display-bold";
+  font-size: 36px;
+  color: #000;
+  line-height: 43px;
+}
+.similar_photos_show_more {
+  font-family: "SF UI Display-light";
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration-line: underline;
+  color: #828282;
+  cursor: pointer;
+}
+
+@media all and (max-width: 400px) {
+  .main_foto_content {
+    height: unset;
+    z-index: 1;
+    position: relative;
+    .centered_photo {
+      width: 335px;
+      height: 220px;
+      box-shadow: unset;
+      margin: 0 auto 30px;
+    }
+  }
+  .main_wrapper {
+    padding-top: 124px;
+  }
+  .main_wrapper {
+    width: 100%;
+    max-width: 1482px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .photo_section_user_buttons {
+    margin-bottom: 40px;
+  }
+  .button_addFav_download {
+    display: flex;
+    align-items: center;
+  }
+  .photo_section_user_buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .add_to_favorites {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .button_download {
+    cursor: pointer;
+  }
+  .choosen_photo {
+    display: none;
+  }
+  .photo_similar_tags_text {
+    font-size: 18px;
+    line-height: 21px;
+    color: #000;
+    text-align: left;
+    padding-left: 22px;
+  }
+  .photo_tags {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 0 22px;
+  }
+  .related_tags {
+    font-family: "SF UI Display-light";
+    font-size: 18px;
+    line-height: 21px;
+    color: #828282;
+    padding: 5px 10px 4px 11px;
+  }
+  .tags_background {
+    margin-top: 20px;
+    border-radius: 8px;
+    border: none;
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+  .similar_photos_title {
+    display: flex;
+    text-align: left;
+    margin-bottom: 26px;
+    padding-left: 22px;
+    margin: 33px auto 26px;
+  }
+  .similar_photos_text {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .similar_photos_show_more {
+    display: none;
   }
 }

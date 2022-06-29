@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import styles from "./index.module.scss";
 import Line from "../../assets/images/Line.svg";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
-export const Search = () => {
-  const [item, setItem] = useState();
+const Search = () => {
+  const router = useRouter();
   const [categories, setCategories] = useState([
     { id: 1, value: "Wallpapers" },
     { id: 2, value: "Textures & Patterns" },
@@ -26,38 +27,22 @@ export const Search = () => {
     { id: 18, value: "People" },
   ]);
 
-  function addActiveClassName(id) {
-    setItem(id);
-    console.log(id);
-  }
 
   return (
     <div className={styles.main_wrapper}>
       <div className={styles.search_component}>
         <div className={styles.search_inner_content}>
-          <div className={styles.search_title}>
-            <h1 className={styles.search_text}> Поиск </h1>
-          </div>
-          <div className={styles.line_image}>
-            <Image src={Line} width={1200} height={1} alt="Line" />
-          </div>
+          <h1 className={styles.search_text}> {router.pathname !== '/history' ? 'Поиск' : 'Ваши запросы'} </h1>
+          <Image src={Line} width={1200} height={1} alt="Line" />
           <div className={styles.search_categories}>
-            {categories.map((obj, idx) => {
-              return (
-                <p
-                  onClick={() => {
-                    addActiveClassName(obj.id);
-                  }}
-                  className={obj.id === item ? styles.active_category : ""}
-                  key={obj.id}
-                >
-                  {obj.value}
-                </p>
-              );
-            })}
+            {categories.map((obj) => (
+              <p key={obj.id}>{obj.value}</p>
+            ))}
           </div>
         </div>
       </div>
     </div>
   );
 };
+
+export default Search;

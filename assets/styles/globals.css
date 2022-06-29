@@ -11,9 +11,7 @@
   font-family: "SF UI Display-light";
   src: url("../fonts/sf-ui-display-light-58646b33e0551.otf") format("opentype");
 }
-/* html{
-  overflow: hidden;
-} */
+
 * {
   box-sizing: border-box;
   padding: 0;

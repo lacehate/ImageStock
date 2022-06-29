@@ -24,3 +24,29 @@
     line-height: 21.48px;
   }
 }
+
+@media all and (max-width: 400px) {
+  .user_info {
+    padding-left: 22px;
+  }
+  
+  .user_profile_img {
+    width: 54px;
+    height: 54px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    margin-right: 11px;
+  }
+  .user_name_email {
+    font-family: "SF UI Display";
+    color: #000;
+    .user_full_name {
+      font-size: 18px;
+      line-height: 21px;
+    }
+    .user_email {
+      font-size: 18px;
+      line-height: 21.48px;
+    }
+  }
+}

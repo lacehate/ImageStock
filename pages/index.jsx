@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
-import { Search } from "../components/Search/index.jsx";
+import Search from "../components/Search";
 import flexView from "../assets/images/flexView.svg";
 import flexViewInactive from "../assets/images/flexViewInactive.svg";
 import blockView from "../assets/images/blockView.svg";
 import blockViewInactive from "../assets/images/blockViewInactive.svg";
 import Image from "next/image.js";
-import Link from "next/link";
 import axios from "axios";
 import MainContainer from "../components/MainContainer/MainContainer.jsx";
+import Gallery from "../components/gallery";
 
 function Home({ photos }) {
   const [activeButtonBlockView, setActiveButtonBlockView] = useState(false);
@@ -67,26 +67,10 @@ function Home({ photos }) {
           </div>
         </div>
       </div>
-
-      <section className={styles.section_photo}>
-        <div className={styles.main_wrapper}>
-          {photos.map((item) => {
-            return (
-              <Link
-                photos={photos}
-                href={`/photo/[id]`}
-                as={`/photo/${item.id}`}
-                key={item.id}
-              >
-                <div
-                  className={styles.single_photo}
-                  style={{ backgroundImage: `url(${item.urls.small})` }}
-                ></div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
+      <div className="main_wrapper">
+        {console.log(photos)}
+        <Gallery photos={photos} />
+      </div>
     </MainContainer>
   );
 }
@@ -95,7 +79,7 @@ export default Home;
 export const getStaticProps = async () => {
   const key = "NxML6MlGxgeDJlxdq5HHehNtdnvH6qWe7eTN7w7bpfE";
   const url = `https://api.unsplash.com/photos?client_id=${key}&per_page=22`;
-  const { data } = await axios.get(url,{params: {tags: 'tags'}});
+  const { data } = await axios.get(url);
   return {
     props: {
       photos: data,
